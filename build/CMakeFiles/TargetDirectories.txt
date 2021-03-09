@@ -1,0 +1,3 @@
+/home/twinkle/MSU/CG/I/CGRL/build/CMakeFiles/rebuild_cache.dir
+/home/twinkle/MSU/CG/I/CGRL/build/CMakeFiles/edit_cache.dir
+/home/twinkle/MSU/CG/I/CGRL/build/CMakeFiles/main.dir
