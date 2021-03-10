@@ -108,15 +108,20 @@ void Env::ProcessEnemies(Image &env_screen, Image &screen, Player &player) { // 
                 if (mask == PosDir::NON or mask == PosDir::ACT or mask == PosDir::DEATH or mask == PosDir::TARGET) {
                     if (mask == PosDir::DEATH) {
                         enemy.Dead();
-                        Point coords = enemy.GetCoords();
-                        for (int x = coords.x; x < coords.x + tileSize; ++x) {
-                            for (int y = coords.y; y < coords.y + tileSize; ++y) {
-                                mask_map[y][x] = PosDir::NON;
-                            }
-                        }
                     }
                     enemy.MovePos(false);
                 } else {
+                    Point coords = enemy.GetCoords();
+                    for (int x = coords.x; x < coords.x + tileSize; ++x) {
+                        for (int y = coords.y; y < coords.y + tileSize; ++y) {
+                            mask_map[y][x] = PosDir::POS;
+                        }
+                    }
+                    for (int x = pos_coords.x; x < pos_coords.x + tileSize; ++x) {
+                        for (int y = pos_coords.y; y < pos_coords.y + tileSize; ++y) {
+                            mask_map[y][x] = PosDir::NON;
+                        }
+                    }
                     enemy.MovePos(true);
                 }
             }

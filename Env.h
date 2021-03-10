@@ -88,7 +88,7 @@ class Env {
     std::unordered_map<char, PosDir> pos_mapper {
             {'#', PosDir::NON},
             {'@', PosDir::POS},
-            {'E', PosDir::POS},
+            {'E', PosDir::NON},
             {'.', PosDir::POS},
             {' ', PosDir::DEATH},
             {'D', PosDir::ACT},
